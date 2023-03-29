@@ -27,17 +27,17 @@ class Solution {
 		for(int i=0; i<numbers.length; i++) {
 			switch(numbers[i]) {
 			case 1: case 4: case 7:
-                // 1, 4, 7인 경우 왼손 엄지손가락 사용
+                	// 1, 4, 7인 경우 왼손 엄지손가락 사용
 				left = keypad.get(numbers[i]);
 				answer += "L";
 				break;
 			case 3: case 6: case 9:
-                // 3, 6, 9인 경우 오른쪽 엄지손가락 사용
+                	// 3, 6, 9인 경우 오른쪽 엄지손가락 사용
 				right = keypad.get(numbers[i]);
 				answer += "R";
 				break;
 			case 2: case 5: case 8: case 0:
-                // 2, 5, 8, 0인 경우 거리 계산하여 결정
+                	// 2, 5, 8, 0인 경우 거리 계산하여 결정
 				int disL = distance(keypad.get(numbers[i]), left);
 				int disR = distance(keypad.get(numbers[i]), right);
 				if(disL < disR || (disL == disR && hand.equals("left"))) {
