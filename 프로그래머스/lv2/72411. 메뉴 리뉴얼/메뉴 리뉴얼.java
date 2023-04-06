@@ -41,7 +41,7 @@ class Solution {
 		return answer;
     }
     
-    	public static void comb(String[] orders, int r, int cnt, int start) {
+    public static void comb(String[] orders, int r, int cnt, int start) {
 		if (cnt == r) {
 			// 몇명의 손님들에 포함되는지 확인
 			int count = 0;
