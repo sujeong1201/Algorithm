@@ -6,14 +6,17 @@ import java.util.List;
 class Solution {
     static int[] combination;  // 조합
 	static boolean[][] menu;  // 각 주문에 포함된 메뉴들 체크
+    static boolean[] isAble;
 	static int maxCount;
 	static List<int[]> resultPerCnt;
     
     public String[] solution(String[] orders, int[] course) {
 		menu = new boolean[orders.length][26];
+        isAble = new boolean[26];
 		for(int i=0; i<orders.length; i++) {
 			for(int j=0; j<orders[i].length(); j++) {
 				menu[i][orders[i].charAt(j) - 65] = true;
+                isAble[orders[i].charAt(j) - 65] = true;
 			}
 		}
 		
@@ -63,6 +66,8 @@ class Solution {
 		}
 
 		for (int i = start; i < 26; i++) {
+            if(!isAble[i]) continue;
+            
 			combination[cnt] = i;
 			comb(orders, r, cnt + 1, i + 1);
 		}
