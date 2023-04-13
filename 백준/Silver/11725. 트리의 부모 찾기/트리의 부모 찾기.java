@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class Main {
 	static int N, parents[];
 	static boolean visited[];
-	static ArrayList[] adjList;
+	static ArrayList<Integer>[] adjList;
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -26,7 +26,9 @@ public class Main {
 		}
 		
 		dfs(1);
-		for(int i = 2; i <= N; i++) System.out.println(parents[i]);
+		StringBuilder sb = new StringBuilder();
+		for(int i = 2; i <= N; i++) sb.append(parents[i] + "\n");
+		System.out.println(sb.toString());
 	}
 
 	private static void dfs(int cur) {
