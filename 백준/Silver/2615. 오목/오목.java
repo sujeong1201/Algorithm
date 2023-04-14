@@ -21,12 +21,12 @@ public class Main {
 		int r = 0, c = 0;
 		for(int i=0; i<19; i++) {
 			for(int j=0; j<19; j++) {
-				if(map[j][i] != 0 && omok(j, i)) {
-					if(map[j][i] == 1) blackWin = true;
+				if(map[i][j] != 0 && omok(i, j)) {
+					if(map[i][j] == 1) blackWin = true;
 					else whiteWin = true;
 					
-					r = j; 
-					c = i;
+					r = i; 
+					c = j;
 				}
 			}
 		}
