@@ -39,12 +39,15 @@ public class Main {
     }
 
     private static void printDistance() {
+        StringBuilder sb = new StringBuilder();
+
         for(int r = 0; r < N; r++) {
             for(int c = 0; c < M; c++) {
-                System.out.print(distance[r][c] + " ");
+                sb.append(distance[r][c] + " ");
             }
-            System.out.println();
+            sb.append("\n");
         }
+        System.out.println(sb.toString());
     }
 
     private static void bfs(int destR, int destC) {
