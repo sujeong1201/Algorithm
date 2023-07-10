@@ -21,11 +21,12 @@ public class Main {
             }
         }
 
-//        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for(String key : trees.keySet()) {
             double percentage = (double) trees.get(key) / N * 100;
-            System.out.printf("%s %.4f\n", key, percentage);
+//            System.out.printf("%s %.4f\n", key, percentage);
+            sb.append(key + " " + String.format("%.4f", percentage) + "\n");
         }
-//        System.out.println(sb.toString());
+        System.out.println(sb.toString());
     }
 }
