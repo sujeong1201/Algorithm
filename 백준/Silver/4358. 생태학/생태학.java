@@ -23,7 +23,7 @@ public class Main {
 
 //        StringBuilder sb = new StringBuilder();
         for(String key : trees.keySet()) {
-            double percentage = Math.round((double) trees.get(key) / N * 1_000_000) / 10000.0;
+            double percentage = (double) trees.get(key) / N * 100;
             System.out.printf("%s %.4f\n", key, percentage);
         }
 //        System.out.println(sb.toString());
