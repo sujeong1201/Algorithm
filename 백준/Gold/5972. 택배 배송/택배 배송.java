@@ -40,7 +40,6 @@ public class Main {
             int cur[] = priorityQueue.poll();
 
             if(cur[0] == N) break;
-            if(cur[1] > distance[cur[0]]) continue;
 
             for(int i = 0; i < adjList[cur[0]].size(); i++) {
                 int[] next = adjList[cur[0]].get(i);
