@@ -15,13 +15,9 @@ public class Main {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int N = Integer.parseInt(st.nextToken());
             int M = Integer.parseInt(st.nextToken());
-            int[][] plane = new int[N + 1][N + 1];
 
             for(int i = 1; i <= M; i++) {
-                st = new StringTokenizer(br.readLine());
-                int a = Integer.parseInt(st.nextToken());
-                int b = Integer.parseInt(st.nextToken());
-                plane[a][b] = plane[b][a] = i;
+                String plane = br.readLine();
             }
             
             sb.append(N - 1 + "\n");
