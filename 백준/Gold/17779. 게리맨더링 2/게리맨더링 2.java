@@ -53,8 +53,8 @@ public class Main {
             populationSum.add(getPopulationSum(x + d2 + 1, N - 1, y - d1 + d2, N - 1, five));
 
             int populationDiff =
-                populationSum.stream().max(Comparator.comparing(z -> z)).orElseThrow()
-                    - populationSum.stream().min(Comparator.comparing(z -> z)).orElseThrow();
+                populationSum.stream().max(Integer::compareTo).orElseThrow()
+                    - populationSum.stream().min(Integer::compareTo).orElseThrow();
             if (populationDiff < minPopulationDiff) minPopulationDiff = populationDiff;
           }
         }
