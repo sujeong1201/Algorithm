@@ -18,23 +18,22 @@ public class Main {
       sushi[i] = sushi[N + i] = Integer.parseInt(br.readLine());
     }
 
-    int maxType = 0;
     counts[c]++;
     for (int i = 0; i < k; i++) {
       counts[sushi[i]]++;
     }
+    int curType = 0;
     for (int i = 1; i <= d; i++) {
-      if (counts[i] > 0) maxType++;
+      if (counts[i] > 0) curType++;
     }
+    int maxType = curType;
 
     for (int i = 1; i < N; i++) {
       counts[sushi[i - 1]]--;
+      if (counts[sushi[i - 1]] == 0) curType--;
       counts[sushi[k + i - 1]]++;
+      if (counts[sushi[k + i - 1]] == 1) curType++;
 
-      int curType = 0;
-      for (int j = 1; j <= d; j++) {
-        if (counts[j] > 0) curType++;
-      }
       if (curType > maxType) maxType = curType;
     }
 
