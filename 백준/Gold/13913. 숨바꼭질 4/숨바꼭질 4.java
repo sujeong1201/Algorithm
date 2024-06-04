@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 
 public class Main {
@@ -11,6 +9,7 @@ public class Main {
     StringTokenizer st = new StringTokenizer(br.readLine());
     int N = Integer.parseInt(st.nextToken());
     int K = Integer.parseInt(st.nextToken());
+    br.close();
 
     if (N == K) {
       System.out.println(0);
@@ -20,16 +19,20 @@ public class Main {
 
     bfs(N, K);
 
-    StringBuilder sb = new StringBuilder();
+    Stack<Integer> stack = new Stack<>();
     int i = K;
     while (true) {
       if (i == -2) break;
 
-      sb.insert(0, i + " ");
+      stack.push(i);
       i = visited[i];
     }
-    System.out.println(time);
-    System.out.println(sb);
+
+    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    bw.write(time + "\n");
+    while (!stack.isEmpty()) bw.write(stack.pop() + " ");
+    bw.flush();
+    bw.close();
   }
 
   private static void bfs(int start, int target) {
